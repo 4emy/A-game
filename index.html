@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>A Game</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div id="loadingScreen" class="loading-screen">
+    <div class="loading-card" role="status" aria-live="polite">
+      <h2>Preparing Trap Engine</h2>
+      <p id="loadingText">Loading visuals...</p>
+      <div class="loading-bar" aria-hidden="true">
+        <div id="loadingFill" class="loading-fill"></div>
+      </div>
+    </div>
+  </div>
+
+  <div id="scareLayer" class="scare-layer" hidden>
+    <div id="scareFrame" class="scare-frame">
+      <p id="scareCaption" class="scare-caption">KEEP LOOKING</p>
+    </div>
+  </div>
+
+  <main class="shell">
+    <header class="topbar">
+      <h1>A Game</h1>
+      <div class="stats">
+        <span id="levelLabel">Level 1/24</span>
+        <span id="timerLabel">Time: --</span>
+        <span id="difficultyLabel">Difficulty x1.00</span>
+        <span id="seedLabel">Seed ----</span>
+      </div>
+    </header>
+
+    <p class="content-note">
+      Content Note: This game includes confusing instructions, difficult logic levels, tense audio, and horror-themed jumpscares.
+    </p>
+
+    <div class="run-progress" aria-hidden="true">
+      <div id="runProgressFill" class="run-progress-fill"></div>
+    </div>
+
+    <section id="panel" class="panel" aria-live="polite">
+      <p id="prompt">Press start when ready.</p>
+      <p id="helperText" class="helper-text">Read instructions slowly. Visual effects are smooth and no flashing is used.</p>
+      <div id="arena" class="arena"></div>
+    </section>
+
+    <footer class="actions">
+      <button id="startBtn" class="primary" disabled>Start Run</button>
+      <button id="restartBtn" class="secondary" hidden>Retry</button>
+      <button id="muteBtn" class="secondary">Sound On</button>
+      <button id="scareBtn" class="secondary">Jumpscares On</button>
+    </footer>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
